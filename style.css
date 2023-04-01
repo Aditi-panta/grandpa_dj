@@ -1,0 +1,19 @@
+.heading{
+    font-size: 23px;
+    width:100%;
+    margin:0px;
+}
+.note{
+    font-size:15px;
+    color:black;
+}
+body{
+    background-color:rgb(114, 114, 196);
+}
+.play_button{
+    font-size:25px;
+}
+canvas{
+    border:5px solid white;
+    border-radius:20px;
+}
