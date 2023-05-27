@@ -4,6 +4,10 @@ leftWristX=0;
 leftWristY=0;
 scoreleftwrist=0;
 scorerightwrist=0;
+song1_status="";
+song_status="";
+song="";
+song1="";
 
 function preload(){
     song=loadSound("music.mp3");
@@ -40,18 +44,20 @@ function draw(){
     image(video,0,0,600,500);
     fill("red");
     stroke("red");
-    if(scoreleftwrist>0.2){
-        circle(leftWristX,leftWristY,20);
-        play=song.isPlaying();
-        play1=song1.isPlaying();
-        if(play1==true){
-            song1.stop()
-            song.play()
-            console.log("song is playing");
+    if (scorerightwrist>0.2){
+        circle(rightWristX,rightWristY,20);
+        song1.stop();
+        if(song_status==false){
+            song.play();
+            document.getElementById("song").innerHTML="Playing Harry Potter theme song";
         }
-        else{
-            song.play()
-            console.log("song one is playing");
+    }
+    if (scoreleftwrist>0.2){
+        circle(leftWristX,leftWristY,20);
+        song.stop();
+        if(song1_status==false){
+            song1.play();
+            document.getElementById("song").innerHTML="Playing Peter Pan song";
         }
     }
 }
